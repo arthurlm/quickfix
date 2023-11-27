@@ -4,6 +4,7 @@ add_custom_target(QUICKFIX_HEADERS_COPY ALL
 COMMAND ${CMAKE_COMMAND} -E make_directory ${PROJECT_SOURCE_DIR}/include/
 COMMAND ${CMAKE_COMMAND} -E make_directory ${PROJECT_SOURCE_DIR}/include/quickfix
 COMMAND ${CMAKE_COMMAND} -E copy_if_different ${PROJECT_SOURCE_DIR}/src/C++/Acceptor.h ${PROJECT_SOURCE_DIR}/include/quickfix/Acceptor.h
+COMMAND ${CMAKE_COMMAND} -E copy_if_different ${PROJECT_SOURCE_DIR}/src/C++/Allocator.h ${PROJECT_SOURCE_DIR}/include/quickfix/Allocator.h
 COMMAND ${CMAKE_COMMAND} -E copy_if_different ${PROJECT_SOURCE_DIR}/src/C++/Application.h ${PROJECT_SOURCE_DIR}/include/quickfix/Application.h
 COMMAND ${CMAKE_COMMAND} -E copy_if_different ${PROJECT_SOURCE_DIR}/src/C++/config-all.h ${PROJECT_SOURCE_DIR}/include/quickfix/config-all.h
 COMMAND ${CMAKE_COMMAND} -E copy_if_different ${PROJECT_SOURCE_DIR}/src/C++/DatabaseConnectionID.h ${PROJECT_SOURCE_DIR}/include/quickfix/DatabaseConnectionID.h
