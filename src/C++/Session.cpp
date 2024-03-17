@@ -301,10 +301,11 @@ void Session::nextLogon( const Message& logon, const UtcTimeStamp& now )
       if( endSeqNo > next )
         endSeqNo = EndSeqNo(next);
       generateSequenceReset( beginSeqNo, endSeqNo );
-      return;
     }
-
-    generateRetransmits( beginSeqNo, endSeqNo );
+    else
+    {
+      generateRetransmits( beginSeqNo, endSeqNo );
+    }
   }
 }
 
@@ -398,10 +399,11 @@ void Session::nextResendRequest( const Message& resendRequest, const UtcTimeStam
     if( endSeqNo > next )
       endSeqNo = EndSeqNo(next);
     generateSequenceReset( beginSeqNo, endSeqNo );
-    return;
   }
-
-  generateRetransmits( beginSeqNo.getValue(), endSeqNo.getValue() );
+  else
+  {
+    generateRetransmits( beginSeqNo.getValue(), endSeqNo.getValue() );
+  }
 
   MsgSeqNum msgSeqNum(0);
   resendRequest.getHeader().getField( msgSeqNum );
